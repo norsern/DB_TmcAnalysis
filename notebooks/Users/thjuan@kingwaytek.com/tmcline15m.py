@@ -9,6 +9,7 @@ from pyspark.sql import SQLContext
 from pyspark.sql import Row
 
 
+#讀取道路資料，並篩選等級<8
 roaddata=sqlContext.sql("""
 select * from tbroaddata where kind<8
 """)
@@ -229,11 +230,6 @@ display(tmclineCmp.where(col("std")>10))
 
 # MAGIC %fs
 # MAGIC rm -r /tmcSpatial/
-
-# COMMAND ----------
-
-# MAGIC %fs
-# MAGIC ls
 
 # COMMAND ----------
 
